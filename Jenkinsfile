@@ -5,7 +5,6 @@
 // Image variables
     def buildBarImage = "image-registry.openshift-image-registry.svc:5000/test-project/ace-image-builder-stream/ace-builder:latest"
     def ocImage = "image-registry.openshift-image-registry.svc:5000/test-project/oc-builder-stream/oc-builder:latest"
-
 // Params for Git Checkout-Stage
 def gitCp4iDevOpsUtilsRepo = "https://github.com/khongks/cp4i-devops-utils.git"
 def gitRepo = "https://github.com/khongks/cp4i-ace-books.git"
