@@ -33,6 +33,7 @@ def artifactoryRepo = "generic-local"
 def artifactoryBasePath = "cp4i"
 def artifactoryCredentials = "artifactory_credentials" // defined in Jenkins credentials
 
+
 podTemplate(
     serviceAccount: "kubeadmin",
     containers: [
