@@ -34,7 +34,7 @@ def artifactoryBasePath = "cp4i"
 def artifactoryCredentials = "artifactory_credentials" // defined in Jenkins credentials
 
 podTemplate(
-    serviceAccount: "jenkins-jenkins-dev",
+    serviceAccount: "jenkins",
     containers: [
         containerTemplate(name: 'ace-buildbar', image: "${buildBarImage}", workingDir: "/home/jenkins", ttyEnabled: true, envVars: [
             envVar(key: 'BAR_NAME', value: "${barName}"),
