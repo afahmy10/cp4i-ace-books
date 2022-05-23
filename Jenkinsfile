@@ -69,6 +69,9 @@ podTemplate(
         ])
   ]) {
     node(POD_LABEL) {
+        stage('Login') {
+            sh "oc login https://api.crc.testing:6443 -u kubeadmin -p  XENge-4TLtp-eYX6B-HqcgH --insecure-skip-tls-verify -n test-project"
+        }
         stage('Git Checkout') {
             container("jnlp") {
                 sh """
