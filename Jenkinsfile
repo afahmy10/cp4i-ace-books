@@ -3,7 +3,7 @@
 // curl --user "admin:Passw0rd!" -X POST -F "jenkinsfile=Jenkinsfile" https://$JENKINS_URL/pipeline-model-converter/validate
 
 // Image variables
-def buildBarImage = "image-registry.openshift-image-registry.svc:5000/jenkins/ace-buildbar:12.0.2.0-ubuntu"
+    def buildBarImage = "image-registry.openshift-image-registry.svc:5000/test-project/ace-image-builder-stream/ace-builder"
 def ocImage = "image-registry.openshift-image-registry.svc:5000/jenkins/oc-deploy:latest"
 
 // Params for Git Checkout-Stage
