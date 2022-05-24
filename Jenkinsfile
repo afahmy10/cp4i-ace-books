@@ -33,13 +33,17 @@ def artifactoryPort = "443"
 def artifactoryRepo = "generic-local"
 def artifactoryBasePath = "cp4i"
 def artifactoryCredentials = "artifactory_credentials" // defined in Jenkins credentials
-
- node(POD_LABEL) {
-        stage('Login') {
+pipeline {
+  agent any
+  stages {
+     stage('Login') {
             sh "echo login phase .................."
             sh "oc login https://api.crc.testing:6443 -u kubeadmin -p  XENge-4TLtp-eYX6B-HqcgH --insecure-skip-tls-verify -n test-project"
         }
- }
+    }
+  }
+}
+
 podTemplate(
     containers: [
         containerTemplate(name: 'ace-buildbar', image: "${buildBarImage}", workingDir: "/home/jenkins", ttyEnabled: true, envVars: [
