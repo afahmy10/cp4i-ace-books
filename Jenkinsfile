@@ -1,4 +1,3 @@
-
 // Validate
 // JENKINS_URL=jenkins-jenkins-dev-jenkins.itzroks-3100015379-x94hbr-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud
 // curl --user "admin:Passw0rd!" -X POST -F "jenkinsfile=Jenkinsfile" https://$JENKINS_URL/pipeline-model-converter/validate
@@ -33,15 +32,7 @@ def artifactoryPort = "443"
 def artifactoryRepo = "generic-local"
 def artifactoryBasePath = "cp4i"
 def artifactoryCredentials = "artifactory_credentials" // defined in Jenkins credentials
-pipeline {
-  agent any
-      stages {
-          stage('Login') {
-              steps {
-                    node('login node') {
-                       sh "echo login phase .................."
-                        sh "oc login https://api.crc.testing:6443 -u kubeadmin -p  XENge-4TLtp-eYX6B-HqcgH --insecure-skip-tls-verify -n test-project"            
-                    }
+
 
 podTemplate(
     containers: [
@@ -149,8 +140,4 @@ podTemplate(
             }
         }
     }
-}
-}
-                  }
-     }
 }
