@@ -27,7 +27,6 @@ def configurationList = ""
 def aceDashboardHost = "ace-dashboard-dash.ace.svc.cluster.local"
 def port = "3443"
 def ibmAceSecretName = "ace-dashboard-dash"
-
 // Artifactory configurations
 def artifactoryHost = "artifactory-tools.itzroks-3100015379-x94hbr-6ccd7f378ae819553d37d5f2ee142bd6-0000.au-syd.containers.appdomain.cloud"
 def artifactoryPort = "443"
