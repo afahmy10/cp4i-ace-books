@@ -35,14 +35,16 @@ def artifactoryBasePath = "cp4i"
 def artifactoryCredentials = "artifactory_credentials" // defined in Jenkins credentials
 pipeline {
   agent any
-  stage('Login') {
-      steps {
-            node('login node') {
-               sh "echo login phase .................."
-            sh "oc login https://api.crc.testing:6443 -u kubeadmin -p  XENge-4TLtp-eYX6B-HqcgH --insecure-skip-tls-verify -n test-project"            
-            }
-      }
-}
+      stages {
+          stage('Login') {
+              steps {
+                    node('login node') {
+                       sh "echo login phase .................."
+                        sh "oc login https://api.crc.testing:6443 -u kubeadmin -p  XENge-4TLtp-eYX6B-HqcgH --insecure-skip-tls-verify -n test-project"            
+                    }
+              }
+        }
+     }
 podTemplate(
     containers: [
         containerTemplate(name: 'ace-buildbar', image: "${buildBarImage}", workingDir: "/home/jenkins", ttyEnabled: true, envVars: [
