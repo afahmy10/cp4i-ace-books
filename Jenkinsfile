@@ -43,8 +43,7 @@ pipeline {
                         sh "oc login https://api.crc.testing:6443 -u kubeadmin -p  XENge-4TLtp-eYX6B-HqcgH --insecure-skip-tls-verify -n test-project"            
                     }
               }
-        }
-     }
+
 podTemplate(
     containers: [
         containerTemplate(name: 'ace-buildbar', image: "${buildBarImage}", workingDir: "/home/jenkins", ttyEnabled: true, envVars: [
@@ -153,3 +152,5 @@ podTemplate(
     }
 }
 }
+                  }
+     }
