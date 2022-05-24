@@ -35,6 +35,7 @@ def artifactoryCredentials = "artifactory_credentials" // defined in Jenkins cre
 
 
 podTemplate(
+    serviceAccount: "deployer",
     containers: [
         containerTemplate(name: 'ace-buildbar', image: "${buildBarImage}", workingDir: "/home/jenkins", ttyEnabled: true, envVars: [
             envVar(key: 'BAR_NAME', value: "${barName}"),
