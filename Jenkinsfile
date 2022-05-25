@@ -27,7 +27,7 @@ def aceDashboardHost = "ace-dashboard-dash.ace.svc.cluster.local"
 def port = "3443"
 def ibmAceSecretName = "ace-dashboard-dash"
 // Artifactory configurations
-def artifactoryHost = "afahmy.jfrog.io/ui/native/default-generic-local/"
+def artifactoryHost = "afahmy.jfrog.io/ui/native/"
 def artifactoryPort = "443"
 def artifactoryRepo = "test-generic-local"
 def artifactoryBasePath = "cp4i"
