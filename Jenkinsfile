@@ -29,7 +29,7 @@ def ibmAceSecretName = "ace-dashboard-dash"
 // Artifactory configurations
 def artifactoryHost = "afahmy.jfrog.io/ui/native/default-generic-local/"
 def artifactoryPort = "443"
-def artifactoryRepo = "generic-local"
+def artifactoryRepo = "test-generic-local"
 def artifactoryBasePath = "cp4i"
 def artifactoryCredentials = "artifactory_credentials" // defined in Jenkins credentials
 
