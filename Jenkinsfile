@@ -19,7 +19,7 @@ def utilsDir = "cp4i-devops-utils"
 
 // Params for Deploy Bar Stage
 def serverName = "books"
-def namespace = "ace"
+def namespace = "test-project"
 def configurationList = ""
 
 // ACE dashboard configurations
