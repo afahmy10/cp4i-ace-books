@@ -116,13 +116,13 @@ podTemplate(
                     cd $PROJECT_DIR
                     BAR_FILE="${BAR_NAME}_${BUILD_NUMBER}.bar"
                     cat integration-server.yaml.tmpl
-                    sed -e "s/{{NAME}}/$SERVER_NAME/g" \
-                        -e "s/{{ARTIFACTORY_HOST}}/$ARTIFACTORY_HOST/g" \
-                        -e "s/{{ARTIFACTORY_PORT}}/$ARTIFACTORY_PORT/g" \
-                        -e "s/{{ARTIFACTORY_REPO}}/$ARTIFACTORY_REPO/g" \
-                        -e "s/{{ARTIFACTORY_BASE_PATH}}/$ARTIFACTORY_BASE_PATH/g" \
-                        -e "s/{{BAR_FILE}}/$BAR_FILE/g" \
-                        -e "s/{{CONFIGURATION_LIST}}/$CONFIGURATION_LIST/g" \
+                    sed -i "s|{{NAME}}|$SERVER_NAME|g" \
+                        -i "s|{{ARTIFACTORY_HOST}}|$ARTIFACTORY_HOST|g" \
+                        -i "s|{{ARTIFACTORY_PORT}}|$ARTIFACTORY_PORT|g" \
+                        -i "s|{{ARTIFACTORY_REPO}}|$ARTIFACTORY_REPO|g" \
+                        -i "s|{{ARTIFACTORY_BASE_PATH}}|$ARTIFACTORY_BASE_PATH|g" \
+                        -i "s|{{BAR_FILE}}|$BAR_FILE|g" \
+                        -i "s|{{CONFIGURATION_LIST}}|$CONFIGURATION_LIST|g" \
                         integration-server.yaml.tmpl > integration-server.yaml
                     cat integration-server.yaml
                     oc apply -f integration-server.yaml
